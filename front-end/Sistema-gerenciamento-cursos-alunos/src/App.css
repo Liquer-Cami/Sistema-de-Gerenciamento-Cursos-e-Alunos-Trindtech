@@ -1,0 +1,116 @@
+.navbar {
+  width: 1440px;
+  height: 67px;
+  left: 1440px;
+  padding: 18px 42px 19px;
+  background-color: #ea394e;
+  color: white;
+  gap: 0px;
+  opacity: 0px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 16px;
+}
+
+.itens-search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  border: 0.5px solid #bdbdbd;
+  border-radius: 6px;
+}
+
+.search-input {
+  height: 46px;
+  width: 1044px;
+  border: none;
+  padding: 8px;
+  outline: none;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.add-new {
+  margin-left: 8px;
+}
+
+.add-new-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 0.5px solid #bdbdbd;
+  padding: 8px 10px 8px 10px;
+  border-radius: 6px;
+  width: 202px;
+  height: 46px;
+}
+
+.add-new-button img {
+  margin-right: 4px;
+}
+
+.add-new-button p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.student-table th,
+.student-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.student-table th {
+  color: black;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.td-cadastro {
+  color: #131313;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.td-nome {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.td-estado {
+  font-weight: 400;
+  color: #5f6368;
+  font-size: 14px;
+}
+
+.fa-trash:hover,
+.fa-edit:hover {
+  color: #ea394e;
+}
+
+.button-trash-edit {
+  background-color: transparent;
+  border: none;
+}
