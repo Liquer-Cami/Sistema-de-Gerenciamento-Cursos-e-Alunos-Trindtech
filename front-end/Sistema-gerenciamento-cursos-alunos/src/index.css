@@ -11,8 +11,4 @@ body {
   background-color: white;
 }
 
-.search-bar-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
+

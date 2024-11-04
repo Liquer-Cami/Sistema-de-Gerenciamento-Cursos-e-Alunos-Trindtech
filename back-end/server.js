@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.post("/alunos", async (req, res) => {
+app.post("/cadastro", async (req, res) => {
   await prisma.aluno.create({
     data: {
       nome: req.body.nome,
@@ -25,22 +25,13 @@ app.post("/alunos", async (req, res) => {
       complemento: req.body.complemento,
       cidade: req.body.cidade,
       estado: req.body.estado,
-      dataCadastro: req.body.dataCadastro,
     },
   });
 
-  await prisma.curso.create({
-    data: {
-      nome_curso: req.body.nome_curso,
-      data_conclusao: req.body.data_conclusao,
-    },
-  });
-
-  console.log("Dado enviado");
   res.status(201).json(req.body);
 });
 
-app.get("/alunos", async (req, res) => {
+app.get("/", async (req, res) => {
   let alunos = [];
 
   if (req.query) {

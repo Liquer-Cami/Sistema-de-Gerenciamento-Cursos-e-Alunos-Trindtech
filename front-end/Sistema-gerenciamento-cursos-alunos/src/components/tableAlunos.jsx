@@ -5,7 +5,7 @@ function TableAlunos() {
   const [alunos, setAlunos] = useState([]);
 
   async function getAlunos() {
-    const alunosFromApi = await api.get("/alunos");
+    const alunosFromApi = await api.get("/");
     setAlunos(alunosFromApi.data);
   }
 
@@ -17,8 +17,6 @@ function TableAlunos() {
   useEffect(() => {
     getAlunos();
   }, []);
-
-
 
   return (
     <table className="student-table">

@@ -1,25 +1,19 @@
 import "./App.css";
-import Navbar from "./components/navbar";
-import SearchBar from "./components/searchBar";
-import TableAlunos from "./components/tableAlunos";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import api from "./services/api";
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Cadastro from "./pages/cadastro/Cadastro";
 
-function Home() {
+function App() {
   return (
-    <div>
-      <div>
-        <Navbar></Navbar>
-      </div>
-      <div className="search-bar-container">
-        <SearchBar className="search-bar" ></SearchBar>
-      </div>
-      <div>
-        <TableAlunos></TableAlunos>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/cadastro" element={<Cadastro></Cadastro>} />
+        <Route path="/" element={<Home></Home>} />
+        <Route path="*" element={<h1>Not Found</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default Home;
+export default App;
