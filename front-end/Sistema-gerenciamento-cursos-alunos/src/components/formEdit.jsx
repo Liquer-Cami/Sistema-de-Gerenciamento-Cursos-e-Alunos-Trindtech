@@ -247,15 +247,15 @@ function EditForm() {
           </div>
         </div>
         <div className="buttons">
-        <button type="submit" className="add-new-button">
-          Editar
-        </button>
-        <Link to={"/"} className="link">
-          <button type="button" className="add-new-button">
-            Voltar
+          <button type="submit" className="add-new-button">
+            Editar
           </button>
-        </Link>
-      </div>
+          <Link to={"/"} className="link">
+            <button type="button" className="add-new-button">
+              Voltar
+            </button>
+          </Link>
+        </div>
       </form>
     </div>
   );

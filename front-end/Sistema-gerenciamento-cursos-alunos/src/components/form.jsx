@@ -210,7 +210,7 @@ function Form() {
             </div>
           </div>
         ))}
-             <div className="buttons">
+        <div className="buttons">
           <button type="submit" className="add-new-button">
             Adicionar
           </button>
