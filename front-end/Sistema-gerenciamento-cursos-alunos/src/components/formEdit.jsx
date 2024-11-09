@@ -246,8 +246,7 @@ function EditForm() {
             ></button>
           </div>
         </div>
-      </form>
-      <div className="buttons">
+        <div className="buttons">
         <button type="submit" className="add-new-button">
           Editar
         </button>
@@ -257,6 +256,7 @@ function EditForm() {
           </button>
         </Link>
       </div>
+      </form>
     </div>
   );
 }

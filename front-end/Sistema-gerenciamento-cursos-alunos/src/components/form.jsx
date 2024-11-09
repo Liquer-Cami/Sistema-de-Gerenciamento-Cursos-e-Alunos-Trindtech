@@ -55,6 +55,7 @@ function Form() {
         estado: InputEstado.current.value,
         cursos: cursos,
       });
+      console.log(alunoData);
       alert("Usuário cadastrado com sucesso!");
     } catch (error) {
       if (error.response && error.response.data.errors) {
@@ -203,21 +204,21 @@ function Form() {
               </button>
               <button
                 type="button"
-                class="fas fa-plus"
+                className="fas fa-plus"
                 onClick={addCurso}
               ></button>
             </div>
           </div>
         ))}
+             <div className="buttons">
+          <button type="submit" className="add-new-button">
+            Adicionar
+          </button>
+          <Link to={"/"} className="link">
+            <button className="add-new-button">Voltar</button>
+          </Link>
+        </div>
       </form>
-      <div className="buttons">
-        <button type="submit" className="add-new-button">
-          Adicionar
-        </button>
-        <Link to={"/"} className="link">
-          <button className="add-new-button">Voltar</button>
-        </Link>
-      </div>
     </div>
   );
 }
