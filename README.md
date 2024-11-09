@@ -44,8 +44,8 @@ O Sistema de Gerenciamento de Cursos e Alunos é uma aplicação que tem como ob
 
 O layout da aplicação está disponível no Figma:
 
-<a href="https://www.figma.com/design/pt2bqoYhwu1qepSpgW8XOQ/Trindtech-Sele%C3%A7%C3%A3o?node-id=0-1&node-type=canvas&t=eokFGohHpNSDr2Ir-0">
-</a>
+"https://www.figma.com/design/pt2bqoYhwu1qepSpgW8XOQ/Trindtech-Sele%C3%A7%C3%A3o?node-id=0-1&node-type=canvas&t=eokFGohHpNSDr2Ir-0">
+
 
 
 ---
@@ -79,31 +79,31 @@ git clone https://github.com/Liquer-Cami/Sistema-de-Gerenciamento-Cursos-e-Aluno
 
 #### 3. Configuração do Backend
 
-# Acesse a pasta do backend:
+**Acesse a pasta do backend:**
 cd Back-end
 
-# Instale as dependências:
+**Instale as dependências:**
 npm install
 
-# Execute as migrações do Prisma para criar as tabelas no banco de dados:
+**Execute as migrações do Prisma para criar as tabelas no banco de dados:**
 npx prisma migrate dev
 npx prisma generate
 
-# Inicie o servidor backend:
+**Inicie o servidor backend:**
 node server.js
 
  O backend estará disponível em `http://localhost:3001`.
 
 #### 3. Configuração do Front-end
 
-# Acesse a pasta do frontend:
+**Acesse a pasta do frontend:**
 cd Front-end
 cd Sistema-gerenciamento-cursos-alunos
 
-# Instale as dependências:
+**Instale as dependências:**
 npm install
 
-# Inicie o servidor frontend:
+**Inicie o servidor frontend:**
 npm run dev
 
 ## 📑 Documentação de APIs
