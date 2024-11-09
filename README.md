@@ -108,7 +108,7 @@ npm run dev
 
 ## 📑 Documentação de APIs
 
-1. API Externa: ViaCEP
+#### 1. API Externa: ViaCEP
 Esta API é utilizada para buscar informações de endereço a partir de um CEP.
 
 #### Endpoint
@@ -118,37 +118,37 @@ Método: GET
 #### Exemplo de Requisição
 GET https://viacep.com.br/ws/01001000/json/
 
-2. API de Gerenciamento de Cursos e Alunos
+#### 2. API de Gerenciamento de Cursos e Alunos
 
 Esta API foi desenvolvida para gerenciar dados de cursos e alunos, permitindo operações de criação, leitura, atualização e exclusão (CRUD). A API também inclui endpoints para listar informações de cursos, alunos e associações entre eles.
 
-1. Cadastrar 
+**1. Cadastrar:**
 Este endpoint cria um novo aluno e permite associar cursos a ele.
 
 URL: /cadastro
 Método: POST
 Campos Obrigatórios: nome, email, cep, pais, numeroCasa, e uma lista de cursos com nome e dataConclusao.
 
-2. Listar
+**2. Listar:**
 Consulta todos os alunos cadastrados e seus respectivos cursos.
 
 URL: /
 Método: GET
 Filtro Opcional: nome
 
-3. Obter por ID
+**3. Obter por ID:**
 Obtenha informações detalhadas de um aluno específico.
 
 URL: /:id
 Método: GET
 
-4. Editar 
+**4. Editar:** 
 Atualize os dados de um aluno específico e altere seus cursos.
 
 URL: /edit/:id
 Método: PUT
 
-5. Deletar 
+**5. Deletar:**
 Remove um aluno e suas associações com cursos do sistema.
 
 URL: /alunos/:id
