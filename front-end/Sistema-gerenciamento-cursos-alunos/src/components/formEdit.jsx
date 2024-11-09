@@ -39,11 +39,15 @@ function EditForm() {
     async function ObterDados() {
       try {
         const response = await api.get(`/${id}`);
-        const aluno = response.data.find((aluno) => aluno.aluno_id === parseInt(id));
-        
+        const aluno = response.data.find(
+          (aluno) => aluno.aluno_id === parseInt(id)
+        );
+
         InputNome.current.value = aluno.nome;
         InputSobrenome.current.value = aluno.sobrenome;
-        InputDataDeNascimento.current.value = aluno.dataNascimento ? aluno.dataNascimento.split('T')[0] : '';
+        InputDataDeNascimento.current.value = aluno.dataNascimento
+          ? aluno.dataNascimento.split("T")[0]
+          : "";
         InputCPF.current.value = aluno.cpf;
         InputGenero.current.value = aluno.genero;
         InputEmail.current.value = aluno.email;
@@ -123,112 +127,127 @@ function EditForm() {
 
   return (
     <div>
-    <form className="form-container" onSubmit={updateAlunosCursos}>
-      <div className="form-group">
-        <label>Nome*</label>
-        <input type="text" className="input-form" ref={InputNome} />
-      </div>
-      <div className="form-group">
-        <label>Sobrenome</label>
-        <input type="text" className="input-form" ref={InputSobrenome} />
-      </div>
-      <div className="form-group">
-        <label>Data de Nascimento</label>
-        <input type="date" className="input-form" ref={InputDataDeNascimento} />
-      </div>
-      <div className="form-group">
-        <label>CPF</label>
-        <input type="text" className="input-form" ref={InputCPF} />
-      </div>
-      <div className="form-group">
-        <label>Gênero</label>
-        <select name="genero" className="input-form" ref={InputGenero}>
-          <option value="Feminino">Feminino</option>
-          <option value="Masculino">Masculino</option>
-          <option value="Outro">Outro</option>
-        </select>
-      </div>
-      <div className="form-group">
-        <label>Email*</label>
-        <input type="email" className="input-form" ref={InputEmail} />
-      </div>
-
-      <h2 className="title-forms">Localização</h2>
-      <h2></h2>
-
-      <div className="form-group">
-        <label>CEP*</label>
-        <input type="text" className="input-form" ref={InputCEP} onBlur={cep} />
-      </div>
-      <div className="form-group">
-        <label>País*</label>
-        <input type="text" className="input-form" ref={InputPais} />
-      </div>
-      <div className="form-group">
-        <label>Rua</label>
-        <input type="text" className="input-form" ref={InputRua} />
-      </div>
-      <div className="form-group">
-        <label>Bairro</label>
-        <input type="text" className="input-form" ref={InputBairro} />
-      </div>
-      <div className="form-group">
-        <label>Número*</label>
-        <input type="text" className="input-form" ref={InputNumero} />
-      </div>
-      <div className="form-group">
-        <label>Complemento</label>
-        <input type="text" className="input-form" ref={InputComplemento} />
-      </div>
-      <div className="form-group">
-        <label>Cidade</label>
-        <input type="text" className="input-form" ref={InputCidade} />
-      </div>
-      <div className="form-group">
-        <label>Estado</label>
-        <input type="text" className="input-form" ref={InputEstado} />
-      </div>
-
-      <h2 className="title-forms">Cursos</h2>
-      <h2></h2>
-      <div className="form-container-cursos">
-      {cursos.map((curso, index) => (
-        <div key={index}>
-          <div className="form-cursos-group">
-            <label>Nome do Curso</label>
-            <input
-              type="text"
-              className="input-form-curso"
-              value={curso.nome}
-              onChange={(e) => handleCursoChange(index, "nome", e.target.value)}
-            />
-          </div>
-          <div className="form-cursos-group">
-            <label>Data de Conclusão</label>
-            <input
-              type="date"
-              className="input-form-curso"
-              value={curso.dataConclusao}
-              onChange={(e) =>
-                handleCursoChange(index, "dataConclusao", e.target.value)
-              }
-            />
-          </div>
-          <button
-            type="button"
-            className="fa fa-trash"
-            onClick={() => removeCurso(index)}
-          >
-            {" "}
-          </button>
+      <form className="form-container" onSubmit={updateAlunosCursos}>
+        <div className="form-group">
+          <label>Nome*</label>
+          <input type="text" className="input-form" ref={InputNome} />
         </div>
-      ))}
-      <div>
-        <button type="button" className="fas fa-plus" onClick={addCurso}></button>
-      </div>
-      </div>
-    </form>
-    <div className="buttons">
+        <div className="form-group">
+          <label>Sobrenome</label>
+          <input type="text" className="input-form" ref={InputSobrenome} />
+        </div>
+        <div className="form-group">
+          <label>Data de Nascimento</label>
+          <input
+            type="date"
+            className="input-form"
+            ref={InputDataDeNascimento}
+          />
+        </div>
+        <div className="form-group">
+          <label>CPF</label>
+          <input type="text" className="input-form" ref={InputCPF} />
+        </div>
+        <div className="form-group">
+          <label>Gênero</label>
+          <select name="genero" className="input-form" ref={InputGenero}>
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label>Email*</label>
+          <input type="email" className="input-form" ref={InputEmail} />
+        </div>
+
+        <h2 className="title-forms">Localização</h2>
+        <h2></h2>
+
+        <div className="form-group">
+          <label>CEP*</label>
+          <input
+            type="text"
+            className="input-form"
+            ref={InputCEP}
+            onBlur={cep}
+          />
+        </div>
+        <div className="form-group">
+          <label>País*</label>
+          <input type="text" className="input-form" ref={InputPais} />
+        </div>
+        <div className="form-group">
+          <label>Rua</label>
+          <input type="text" className="input-form" ref={InputRua} />
+        </div>
+        <div className="form-group">
+          <label>Bairro</label>
+          <input type="text" className="input-form" ref={InputBairro} />
+        </div>
+        <div className="form-group">
+          <label>Número*</label>
+          <input type="text" className="input-form" ref={InputNumero} />
+        </div>
+        <div className="form-group">
+          <label>Complemento</label>
+          <input type="text" className="input-form" ref={InputComplemento} />
+        </div>
+        <div className="form-group">
+          <label>Cidade</label>
+          <input type="text" className="input-form" ref={InputCidade} />
+        </div>
+        <div className="form-group">
+          <label>Estado</label>
+          <input type="text" className="input-form" ref={InputEstado} />
+        </div>
+
+        <h2 className="title-forms">Cursos</h2>
+        <h2></h2>
+        <div className="form-container-cursos">
+          {cursos.map((curso, index) => (
+            <div key={index}>
+              <div className="form-cursos-group">
+                <label>Nome do Curso</label>
+                <input
+                  type="text"
+                  className="input-form-curso"
+                  value={curso.nome}
+                  onChange={(e) =>
+                    handleCursoChange(index, "nome", e.target.value)
+                  }
+                />
+              </div>
+              <div className="form-cursos-group">
+                <label>Data de Conclusão</label>
+                <input
+                  type="date"
+                  className="input-form-curso"
+                  value={curso.dataConclusao}
+                  onChange={(e) =>
+                    handleCursoChange(index, "dataConclusao", e.target.value)
+                  }
+                />
+              </div>
+              <button
+                type="button"
+                className="fa fa-trash"
+                onClick={() => removeCurso(index)}
+              >
+                {" "}
+              </button>
+            </div>
+          ))}
+          <div>
+            <button
+              type="button"
+              className="fas fa-plus"
+              onClick={addCurso}
+            ></button>
+          </div>
+        </div>
+      </form>
+      <div className="buttons">
         <button type="submit" className="add-new-button">
           Editar
         </button>

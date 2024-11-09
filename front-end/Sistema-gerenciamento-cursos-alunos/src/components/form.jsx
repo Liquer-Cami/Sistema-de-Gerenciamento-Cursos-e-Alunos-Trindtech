@@ -211,13 +211,13 @@ function Form() {
         ))}
       </form>
       <div className="buttons">
-          <button type="submit" className="add-new-button">
-            Adicionar
-          </button>
-          <Link to={"/"} className="link">
-            <button className="add-new-button">Voltar</button>
-          </Link>
-        </div>
+        <button type="submit" className="add-new-button">
+          Adicionar
+        </button>
+        <Link to={"/"} className="link">
+          <button className="add-new-button">Voltar</button>
+        </Link>
+      </div>
     </div>
   );
 }
