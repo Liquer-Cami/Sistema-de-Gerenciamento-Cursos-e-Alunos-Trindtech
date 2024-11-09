@@ -10,13 +10,13 @@ datasource db {
 model Aluno {
   aluno_id       Int         @id @default(autoincrement())
   nome           String      @db.VarChar(100)
-  email          String      @unique @db.VarChar(100)
+  email          String      @db.VarChar(100)
   cep            String      @db.VarChar(8)
   pais           String      @db.VarChar(50)
   numeroCasa     String      @db.VarChar(10)
   sobrenome      String?     @db.VarChar(100)
-  dataNascimento DateTime?
-  cpf            String?     @unique @db.VarChar(11)
+  dataDeNascimento DateTime?
+  cpf            String?     @db.VarChar(11)
   genero         String?     @db.VarChar(20)
   bairro         String?     @db.VarChar(100)
   rua            String?     @db.VarChar(100)
@@ -30,7 +30,7 @@ model Aluno {
 
 model Curso {
   curso_id       Int         @id @default(autoincrement())
-  nome_curso     String      @db.VarChar(100)
+  nome_curso     String?    @db.VarChar(100)
   data_conclusao DateTime?
 
   alunos         AlunoCurso[] @relation("AlunoCursos")
@@ -41,8 +41,8 @@ model AlunoCurso {
   curso_id       Int
   data_conclusao DateTime?
 
-  aluno          Aluno       @relation("AlunoCursos", fields: [aluno_id], references: [aluno_id])
-  curso          Curso       @relation("AlunoCursos", fields: [curso_id], references: [curso_id])
+  aluno          Aluno       @relation("AlunoCursos", fields: [aluno_id], references: [aluno_id], onDelete: Cascade)
+  curso          Curso       @relation("AlunoCursos", fields: [curso_id], references: [curso_id], onDelete: Cascade)
 
   @@id([aluno_id, curso_id])
 }
